@@ -1,16 +1,18 @@
 from kivy.lang import Builder
-from kivymd.uix.boxlayout import MDBoxLayout
+from kivy.properties import ObjectProperty
 from kivymd.app import MDApp
+from kivymd.uix.scrollview import MDScrollView
+from kivy.core.window import Window
 
 
+class ContentNavigationDrawer(MDScrollView):
+    screen_manager = ObjectProperty()
+    nav_drawer = ObjectProperty()
 
-class ContentNavigationDrawer(MDBoxLayout):
-    pass
-
-class NewApp(MDApp):
+class Example(MDApp):
     def build(self):
-        self.theme_cls.theme_style = "Light"
+        Window.size = (350, 650)
         return Builder.load_file('new-app.kv')
 
 
-NewApp().run()
+Example().run()

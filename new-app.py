@@ -12,8 +12,9 @@ class ContentNavigationDrawer(MDScrollView):
 
 class Example(MDApp):
     def build(self):
+        self.theme_cls.theme_style = 'Dark'
         Window.size = (350, 650)
-        return Builder.load_file('new-app.kv')
+        return Builder.load_file('DndApp.kv')
 
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):
@@ -34,11 +35,6 @@ class Example(MDApp):
         except ValueError:
             self.root.ids.result_output.text = "Invalid input"# type: ignore
     
-    # Button inputs for changing the theme from light to dark
-    def switch_theme(self):
-        self.theme_cls.theme_style = 'Dark' if self.theme_cls.theme_style == 'Light' else 'Light'
-    
-   
    # Button inputs for number of dice
     def on_press_dice(self, btn):
         self.root.ids.num_dice.text = btn.text# type: ignore

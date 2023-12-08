@@ -12,6 +12,16 @@
             on_press:
                 root.nav_drawer.set_state('close')
                 root.screen_manager.current = 'Character Sheet'
+        
+        OneLineIconListItem:
+            text: 'Close Window'
+            on_press: 
+                root.nav_drawer.set_state('close')
+            IconLeftWidget:
+                icon: 'keyboard-backspace'
+                on_press:
+                    root.nav_drawer.set_state('close')
+            
 
 MDScreen:
 
@@ -44,7 +54,6 @@ MDScreen:
 
         MDNavigationDrawer:
             id: nav_drawer
-            radius: (0,16,16,0)
 
             ContentNavigationDrawer:
                 screen_manager: screen_manager

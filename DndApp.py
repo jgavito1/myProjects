@@ -13,6 +13,8 @@ class ContentNavigationDrawer(MDScrollView):
 # Class defining the main functionality of the app
 class DND(MDApp):
     def build(self):
+        self.theme_cls.theme_style = 'Dark'
+        self.theme_cls.primary_palette = 'Orange'
         Window.size = (350, 650)
         return Builder.load_file('DndApp.kv')
 

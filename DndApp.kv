@@ -244,6 +244,33 @@ MDScreen:
             MDScreen:
                 name: 'Character Sheet'
 
+                MDBottomNavigation:
+
+                    MDBottomNavigationItem:
+                        name: 'Profile'
+                        text: 'Profile'
+                        icon: 'account-details-outline'
+
+                    MDBottomNavigationItem:
+                        name: 'Stats'
+                        text: 'Stats'
+                        icon: 'chart-bar'
+                    
+                
+                    MDBottomNavigationItem:
+                        name: 'Spells'
+                        text: 'Spells'
+                        icon: 'magic-staff'
+                
+                MDTopAppBar:
+                    elevation: 0
+                    pos_hint: {"top": 1}
+                    left_action_items:
+                        [['menu', lambda x: nav_drawer.set_state("open")]]
+                    md_bg_color: app.theme_cls.bg_normal
+                    specific_text_color: 'gray'
+
+
                 MDLabel:
                     text: 'Character Sheet'
                     halign: 'center'

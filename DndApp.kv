@@ -21,265 +21,266 @@
                 icon: 'keyboard-backspace'
                 on_press:
                     root.nav_drawer.set_state('close')
-            
+MDNavigationLayout:
 
-MDScreen:
+    MDScreenManager:
+        id: screen_manager
 
-    MDTopAppBar:
-        elevation: 0
-        pos_hint: {"top": 1}
-        left_action_items:
-            [['menu', lambda x: nav_drawer.set_state("open")]]
-        md_bg_color: app.theme_cls.bg_normal
-        specific_text_color: 'gray'
+        MDScreen:
+            name: 'Dice Roller'
 
+            MDBoxLayout:
+                orientation: 'vertical'
 
-    MDNavigationLayout:
+                MDScreen:
 
-        MDScreenManager:
-            id: screen_manager
+                    MDTopAppBar:
+                        elevation: 0
+                        pos_hint: {"top": 1}
+                        left_action_items:
+                            [['menu', lambda x: nav_drawer.set_state("open")]]
+                        md_bg_color: app.theme_cls.bg_normal
+                        specific_text_color: 'gray'
 
-            MDScreen:
-                name: 'Dice Roller'
+                    MDTextField:
+                        id: num_dice
+                        hint_text: "Number of Dice"
+                        input_filter: "int"
+                        pos_hint: {'center_x': .5, 'center_y': .85}
+                        size_hint_x: .9 
+                        width: 300
+                        hint_text_color_normal: 'gray'
+                        line_color_normal: 'gray'
+                        text_color_normal: 'gray'
 
-                MDBoxLayout:
-                    orientation: 'vertical'
-
-                    MDScreen:
-
-                        MDTextField:
-                            id: num_dice
-                            hint_text: "Number of Dice"
-                            input_filter: "int"
-                            pos_hint: {'center_x': .5, 'center_y': .85}
-                            size_hint_x: .9 
-                            width: 300
-                            hint_text_color_normal: 'gray'
-                            line_color_normal: 'gray'
-                            text_color_normal: 'gray'
-
-                        MDFlatButton:
-                            text: "1"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .12, 'center_y': .75}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-                            
-
-                        MDFlatButton:
-                            text: "2"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .31, 'center_y': .75}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "3"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .5, 'center_y': .75}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "4"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .69, 'center_y': .75}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "5"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .88, 'center_y': .75}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "6"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .12, 'center_y': .65}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "7"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .31, 'center_y': .65}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "8"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .5, 'center_y': .65}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "9"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .69, 'center_y': .65}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "10"
-                            on_release: app.on_press_dice(self)
-                            pos_hint: {'center_x': .88, 'center_y': .65}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDTextField:
-                            id: num_sides
-                            hint_text: "Number of Sides"
-                            input_filter: "int"
-                            pos_hint: {'center_x': .5, 'center_y': .55}
-                            size_hint_x: .9 
-                            width: 300
-                            hint_text_color_normal: 'gray'
-                            line_color_normal: 'gray'
-                            text_color_normal: 'gray'
-
-                        MDFlatButton:
-                            text: "20"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .3, 'center_y': .45}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "12"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .5, 'center_y': .45}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "10"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .7, 'center_y': .45}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "8"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .3, 'center_y': .35}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "6"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .5, 'center_y': .35}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDFlatButton:
-                            text: "4"
-                            on_release: app.on_press_sides(self)
-                            pos_hint: {'center_x': .7, 'center_y': .35}
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-
-                        MDTextField:
-                            id: modifier
-                            hint_text: "Modifier"
-                            input_filter: "int"
-                            pos_hint: {'center_x': .5, 'center_y': .27}
-                            size_hint_x: .9
-                            width: 400
-                            hint_text_color_normal: 'gray'
-                            line_color_normal: 'gray'
-                            text_color_normal: 'gray'
+                    MDFlatButton:
+                        text: "1"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .12, 'center_y': .75}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
                         
 
-                        MDTextField:
-                            id: result_output
-                            hint_text: "Result"
-                            readonly: True
-                            pos_hint: {'center_x': .5, 'center_y': .2}
-                            size_hint_x: .9
-                            width: 800
-                            hint_text_color_normal: 'gray'
-                            line_color_normal: 'gray'
-                            text_color_normal: 'gray'
+                    MDFlatButton:
+                        text: "2"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .31, 'center_y': .75}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-                        MDFlatButton:
-                            text: "Roll Dice"
-                            on_release: app.roll_dice()
-                            pos_hint: {'center_x': .35, 'center_y': .1}
-                            size_hint_x: None
-                            width: 300
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
+                    MDFlatButton:
+                        text: "3"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .5, 'center_y': .75}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-                        MDFlatButton:
-                            text: "Reset Dice"
-                            on_release: app.reset_fields()
-                            pos_hint: {'center_x': .65, 'center_y': .1}
-                            size_hint_x: None 
-                            width: 300
-                            theme_text_color: 'Custom'
-                            text_color: 'white'
-                            line_color: 'orange'
-            
-            MDScreen:
-                name: 'Character Sheet'
+                    MDFlatButton:
+                        text: "4"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .69, 'center_y': .75}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-                MDBottomNavigation:
+                    MDFlatButton:
+                        text: "5"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .88, 'center_y': .75}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-                    MDBottomNavigationItem:
-                        name: 'Profile'
-                        text: 'Profile'
-                        icon: 'account-details-outline'
+                    MDFlatButton:
+                        text: "6"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .12, 'center_y': .65}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-                    MDBottomNavigationItem:
-                        name: 'Stats'
-                        text: 'Stats'
-                        icon: 'chart-bar'
+                    MDFlatButton:
+                        text: "7"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .31, 'center_y': .65}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "8"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .5, 'center_y': .65}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "9"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .69, 'center_y': .65}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "10"
+                        on_release: app.on_press_dice(self)
+                        pos_hint: {'center_x': .88, 'center_y': .65}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDTextField:
+                        id: num_sides
+                        hint_text: "Number of Sides"
+                        input_filter: "int"
+                        pos_hint: {'center_x': .5, 'center_y': .55}
+                        size_hint_x: .9 
+                        width: 300
+                        hint_text_color_normal: 'gray'
+                        line_color_normal: 'gray'
+                        text_color_normal: 'gray'
+
+                    MDFlatButton:
+                        text: "20"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .3, 'center_y': .45}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "12"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .5, 'center_y': .45}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "10"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .7, 'center_y': .45}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "8"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .3, 'center_y': .35}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "6"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .5, 'center_y': .35}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDFlatButton:
+                        text: "4"
+                        on_release: app.on_press_sides(self)
+                        pos_hint: {'center_x': .7, 'center_y': .35}
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+
+                    MDTextField:
+                        id: modifier
+                        hint_text: "Modifier"
+                        input_filter: "int"
+                        pos_hint: {'center_x': .5, 'center_y': .27}
+                        size_hint_x: .9
+                        width: 400
+                        hint_text_color_normal: 'gray'
+                        line_color_normal: 'gray'
+                        text_color_normal: 'gray'
                     
-                
-                    MDBottomNavigationItem:
-                        name: 'Spells'
-                        text: 'Spells'
-                        icon: 'magic-staff'
-                
-                MDTopAppBar:
-                    elevation: 0
-                    pos_hint: {"top": 1}
-                    left_action_items:
-                        [['menu', lambda x: nav_drawer.set_state("open")]]
-                    md_bg_color: app.theme_cls.bg_normal
-                    specific_text_color: 'gray'
 
+                    MDTextField:
+                        id: result_output
+                        hint_text: "Result"
+                        readonly: True
+                        pos_hint: {'center_x': .5, 'center_y': .2}
+                        size_hint_x: .9
+                        width: 800
+                        hint_text_color_normal: 'gray'
+                        line_color_normal: 'gray'
+                        text_color_normal: 'gray'
 
-                MDLabel:
-                    text: 'Character Sheet'
-                    halign: 'center'
+                    MDFlatButton:
+                        text: "Roll Dice"
+                        on_release: app.roll_dice()
+                        pos_hint: {'center_x': .35, 'center_y': .1}
+                        size_hint_x: None
+                        width: 300
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
 
-        MDNavigationDrawer:
-            id: nav_drawer
+                    MDFlatButton:
+                        text: "Reset Dice"
+                        on_release: app.reset_fields()
+                        pos_hint: {'center_x': .65, 'center_y': .1}
+                        size_hint_x: None 
+                        width: 300
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+        
+        MDScreen:
+            name: 'Character Sheet'
 
-            ContentNavigationDrawer:
-                screen_manager: screen_manager
-                nav_drawer: nav_drawer
+            MDBottomNavigation:
 
+                MDBottomNavigationItem:
+                    name: 'Profile'
+                    text: 'Profile'
+                    icon: 'account-details-outline'
+
+                    MDLabel:
+                        text: 'Profile'
+                        halign: 'center'
+
+                MDBottomNavigationItem:
+                    name: 'Stats'
+                    text: 'Stats'
+                    icon: 'chart-bar'
+
+                    MDLabel:
+                        text: 'Stats'
+                        halign: 'center'
             
+                MDBottomNavigationItem:
+                    name: 'Spells'
+                    text: 'Spells'
+                    icon: 'magic-staff'
+
+                    MDLabel:
+                        text: 'Spells'
+                        halign: 'center'
+            
+            MDTopAppBar:
+                elevation: 0
+                pos_hint: {"top": 1}
+                left_action_items:
+                    [['menu', lambda x: nav_drawer.set_state("open")]]
+                md_bg_color: app.theme_cls.bg_normal
+                specific_text_color: 'gray'
+
+    MDNavigationDrawer:
+        id: nav_drawer
+
+        ContentNavigationDrawer:
+            screen_manager: screen_manager
+            nav_drawer: nav_drawer
+
+        

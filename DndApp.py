@@ -4,19 +4,100 @@ from kivymd.app import MDApp
 from kivymd.uix.scrollview import MDScrollView
 from kivy.core.window import Window
 import random
+from kivymd.uix.menu import MDDropdownMenu
 
 # Adds content inside of the Navigation Drawer for the user to click on
 class ContentNavigationDrawer(MDScrollView):
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
-
 # Class defining the main functionality of the app
-class DND(MDApp):
+class DND(MDApp):    
     def build(self):
         self.theme_cls.theme_style = 'Dark'
         self.theme_cls.primary_palette = 'Orange'
         Window.size = (350, 650)
-        return Builder.load_file('DndApp.kv')
+        self.screen = Builder.load_file('DndApp.kv')
+        menu_items = [
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Artificer",
+                "on_release": lambda x=f"Artificer": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Barbarian",
+                "on_release": lambda x=f"Barbarian": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Bard",
+                "on_release": lambda x=f"Bard": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Blood Hunter",
+                "on_release": lambda x=f"Blood Hunter": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Cleric",
+                "on_release": lambda x=f"Cleric": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Druid",
+                "on_release": lambda x=f"Druid": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Fighter",
+                "on_release": lambda x=f"Fighter": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Monk",
+                "on_release": lambda x=f"Monk": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Paladin",
+                "on_release": lambda x=f"Paladin": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Ranger",
+                "on_release": lambda x=f"Ranger": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Rogue",
+                "on_release": lambda x=f"Rogue": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Sorcerer",
+                "on_release": lambda x=f"Sorcerer": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Warlock",
+                "on_release": lambda x=f"Warlock": self.class_select(x)
+            },
+            {
+                "viewclass": "OneLineListItem",
+                "text": "Wizard",
+                "on_release": lambda x=f"Wizard": self.class_select(x)
+            } 
+        ]
+        self.menu = MDDropdownMenu(
+            caller=self.screen.ids.class_id, # type: ignore
+            items=menu_items,
+            width_mult=1.75,
+        )
+        return self.screen
+
+    def class_select(self, text_item):
+        self.root.ids.class_name.text = text_item # type: ignore
 
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):

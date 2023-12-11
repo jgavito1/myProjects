@@ -17,6 +17,7 @@ class DND(MDApp):
         self.theme_cls.primary_palette = 'Orange'
         Window.size = (350, 650)
         self.screen = Builder.load_file('DndApp.kv')
+        # Menu_items provides a list of characters class that the character can choose from
         menu_items = [
             {
                 "viewclass": "OneLineListItem",

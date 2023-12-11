@@ -238,7 +238,8 @@ MDNavigationLayout:
         
         MDScreen:
             name: 'Character Sheet'
-
+            
+            
             MDBottomNavigation:
 
                 MDBottomNavigationItem:
@@ -246,9 +247,29 @@ MDNavigationLayout:
                     text: 'Profile'
                     icon: 'account-details-outline'
 
-                    MDLabel:
-                        text: 'Profile'
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
                         halign: 'center'
+                        hint_text: 'Character Name'
+                        multiline: False
+                        size_hint: None, None
+                        size: 300, 40
+                        pos_hint: {'center_x': .5, 'center_y': .85}
+                        
+                    MDDropDownItem:
+                        id: class_id
+                        text: 'CLASS'
+                        pos_hint: {'center_x': .2, 'center_y': .75}
+                        on_release: app.menu.open()
+                    
+                    MDTextField:
+                        id: class_name
+                        readonly: True
+
+
 
                 MDBottomNavigationItem:
                     name: 'Stats'
@@ -267,15 +288,15 @@ MDNavigationLayout:
                     MDLabel:
                         text: 'Spells'
                         halign: 'center'
-		
-		MDBottomNavigationItems:
-		    name: 'Combat'
-		    text: 'Combat'
-		    icon: 'sword'
-		    
-		    MDLabel:
-			text: 'Combat'
-			halign: 'center'
+                
+                MDBottomNavigationItem:
+                    name: 'Combat'
+                    text: 'Combat'
+                    icon: 'sword'
+
+                    MDLabel:
+                        text: 'Combat'
+                        halign: 'center'
             
             MDTopAppBar:
                 elevation: 0

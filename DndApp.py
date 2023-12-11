@@ -92,12 +92,15 @@ class DND(MDApp):
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.class_id, # type: ignore
             items=menu_items,
-            width_mult=1.75,
+            width_mult=3,
+	    max_height= '200dp'
         )
         return self.screen
 
+    # Updates class_name textfield when menu item is selected
     def class_select(self, text_item):
         self.root.ids.class_name.text = text_item # type: ignore
+	self.menu.dismiss()	
 
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):

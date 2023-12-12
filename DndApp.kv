@@ -260,14 +260,12 @@ MDNavigationLayout:
                         pos_hint: {'center_x': .5, 'center_y': .85}
                         line_anim: False
                         
-                    MDFlatButton:
+                    MDRaisedButton:
                         id: class_id
                         text: 'CLASS'
                         pos_hint: {'center_x': .3, 'center_y': .75}
                         on_release: app.menu.open()
-                        theme_text_color: 'Custom'
-                        text_color: 'white'
-                        line_color: 'orange'
+			font_size: 20
                         size_hint_x: .45
                     
                     MDTextField:

@@ -17,92 +17,31 @@ class DND(MDApp):
         self.theme_cls.primary_palette = 'Orange'
         Window.size = (350, 650)
         self.screen = Builder.load_file('DndApp.kv')
-        # Menu_items provides a list of characters class that the character can choose from
+        items = [
+            'Artificer', 'Barbarian', 'Bard', 'Blood Hunter', 'Cleric', 'Druid', 'Fighter',
+            'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard' 
+        ]
         menu_items = [
             {
                 "viewclass": "OneLineListItem",
-                "text": "Artificer",
-                "on_release": lambda x=f"Artificer": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Barbarian",
-                "on_release": lambda x=f"Barbarian": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Bard",
-                "on_release": lambda x=f"Bard": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Blood Hunter",
-                "on_release": lambda x=f"Blood Hunter": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Cleric",
-                "on_release": lambda x=f"Cleric": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Druid",
-                "on_release": lambda x=f"Druid": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Fighter",
-                "on_release": lambda x=f"Fighter": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Monk",
-                "on_release": lambda x=f"Monk": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Paladin",
-                "on_release": lambda x=f"Paladin": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Ranger",
-                "on_release": lambda x=f"Ranger": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Rogue",
-                "on_release": lambda x=f"Rogue": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Sorcerer",
-                "on_release": lambda x=f"Sorcerer": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Warlock",
-                "on_release": lambda x=f"Warlock": self.class_select(x)
-            },
-            {
-                "viewclass": "OneLineListItem",
-                "text": "Wizard",
-                "on_release": lambda x=f"Wizard": self.class_select(x)
-            } 
+                "text": f"{item}",
+                "on_release": lambda x=f"{item}": self.class_select(x)
+            } for item in items
+             
         ]
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.class_id, # type: ignore
             items=menu_items,
             width_mult=3,
-	    max_height= '200dp'
+            max_height= '224dp',
         )
         return self.screen
-
+    
     # Updates class_name textfield when menu item is selected
     def class_select(self, text_item):
         self.root.ids.class_name.text = text_item # type: ignore
-	self.menu.dismiss()	
-
+        self.menu.dismiss()
+    
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):
         try:

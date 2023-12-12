@@ -258,18 +258,27 @@ MDNavigationLayout:
                         size_hint: None, None
                         size: 300, 40
                         pos_hint: {'center_x': .5, 'center_y': .85}
+                        line_anim: False
                         
-                    MDDropDownItem:
+                    MDFlatButton:
                         id: class_id
                         text: 'CLASS'
-                        pos_hint: {'center_x': .2, 'center_y': .75}
+                        pos_hint: {'center_x': .3, 'center_y': .75}
                         on_release: app.menu.open()
+                        theme_text_color: 'Custom'
+                        text_color: 'white'
+                        line_color: 'orange'
+                        size_hint_x: .45
                     
                     MDTextField:
                         id: class_name
                         readonly: True
-			pos_hint {'center_x': .7, 'center_y': .75}
-			size_hint_x: .4
+                        pos_hint: {'center_x': .75, 'center_y': .75}
+                        size_hint_x: .38
+                        font_size: 20
+                        text_color_normal: 'orange'
+                        halign: 'center'
+
 
 
                 MDBottomNavigationItem:

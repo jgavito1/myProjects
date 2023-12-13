@@ -1,5 +1,5 @@
 <ContentNavigationDrawer>:
-
+    
     MDList:
         OneLineListItem:
             text: 'Dice Roller'
@@ -238,8 +238,7 @@ MDNavigationLayout:
         
         MDScreen:
             name: 'Character Sheet'
-            
-            
+
             MDBottomNavigation:
 
                 MDBottomNavigationItem:
@@ -259,24 +258,23 @@ MDNavigationLayout:
                         size: 300, 40
                         pos_hint: {'center_x': .5, 'center_y': .85}
                         line_anim: False
-                        
+
+
                     MDRaisedButton:
                         id: class_id
                         text: 'CLASS'
-                        pos_hint: {'center_x': .3, 'center_y': .75}
+                        pos_hint: {'center_x': .28, 'center_y': .75}
                         on_release: app.menu.open()
-			font_size: 20
-                        size_hint_x: .45
-                    
-                    MDTextField:
-                        id: class_name
-                        readonly: True
-                        pos_hint: {'center_x': .75, 'center_y': .75}
-                        size_hint_x: .38
                         font_size: 20
-                        text_color_normal: 'orange'
-                        halign: 'center'
+                        size_hint_x: .4
 
+                    MDRaisedButton:
+                        id: level_id
+                        text: 'LEVEL'
+                        pos_hint: {'center_x': .725, 'center_y': .75}
+                        on_release: app.level.open()
+                        font_size: 20 
+                        size_hint_x: .4
 
 
                 MDBottomNavigationItem:
@@ -322,3 +320,4 @@ MDNavigationLayout:
             nav_drawer: nav_drawer
 
         
+

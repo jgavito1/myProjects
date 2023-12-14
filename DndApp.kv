@@ -256,11 +256,11 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 300, 40
-                        pos_hint: {'center_x': .5, 'center_y': .85}
+                        pos_hint: {'center_x': .5, 'center_y': .842}
                         line_anim: False
 
 
-                    MDRaisedButton:
+                    MDRectangleFlatButton:
                         id: class_id
                         text: 'CLASS'
                         pos_hint: {'center_x': .28, 'center_y': .75}
@@ -268,11 +268,19 @@ MDNavigationLayout:
                         font_size: 20
                         size_hint_x: .4
 
-                    MDRaisedButton:
+                    MDRectangleFlatButton:
                         id: level_id
                         text: 'LEVEL'
                         pos_hint: {'center_x': .725, 'center_y': .75}
                         on_release: app.level.open()
+                        font_size: 20 
+                        size_hint_x: .4
+                    
+                    MDRectangleFlatButton:
+                        id: race_id
+                        text: 'RACE'
+                        pos_hint: {'center_x': .28, 'center_y': .65}
+                        on_release: app.race.open()
                         font_size: 20 
                         size_hint_x: .4
 
@@ -298,21 +306,20 @@ MDNavigationLayout:
                 MDBottomNavigationItem:
                     name: 'Combat'
                     text: 'Combat'
-                    icon: 'sword'
+                    icon: 'sword-cross'
 
                     MDLabel:
                         text: 'Combat'
                         halign: 'center'
-		
-		MDBottomNavigationItems:
-		    name: 'Inventory'
-		    text: 'Inventory'
-		    icon: 'sack'
+                
+                MDBottomNavigationItem:
+                    name: 'Inventory'
+                    text: 'Inventory'
+                    icon: 'sack'
 
-		    MDLabel:
-			text: 'Inventory'
-			halign: 'center'
-
+                    MDLabel:
+                        text: 'Inventory'
+                        halign: 'center'
             
             MDTopAppBar:
                 elevation: 0
@@ -330,4 +337,3 @@ MDNavigationLayout:
             nav_drawer: nav_drawer
 
         
-

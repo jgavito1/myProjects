@@ -62,11 +62,13 @@ class DND(MDApp):
     # Updates class button and level button text when menu item is selected
     def class_select(self, text_item):
         self.root.ids.class_id.text = text_item # type: ignore
+	self.menu.dismiss()	    
     def level_select(self, text_item):
         self.root.ids.level_id.text = "LEVEL" + " " + text_item # type: ignore
+	self.level.dismiss()
     def race_select(self, text_item):
         self.root.ids.race_id.text = text_item # type: ignore
-        self.level.dismiss()
+        self.race.dismiss()
     
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):

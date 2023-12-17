@@ -283,6 +283,14 @@ MDNavigationLayout:
                         on_release: app.race.open()
                         font_size: 20 
                         size_hint_x: .4
+                    
+                    MDRectangleFlatButton:
+                        id: subrace_id
+                        text: 'SUBRACE'
+                        pos_hint: {'center_x': .725, 'center_y': .65}
+                        on_release: app.subrace.open()
+                        font_size: 20 
+                        size_hint_x: .4
 
 
                 MDBottomNavigationItem:

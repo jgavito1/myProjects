@@ -6,6 +6,7 @@ import random
 from kivymd.uix.menu import MDDropdownMenu
 from menu_items import class_item
 from menu_items import race
+from menu_items import all_subraces
 
 # Adds content inside of the Navigation Drawer for the user to click on
 class ContentNavigationDrawer(MDScrollView):
@@ -38,6 +39,13 @@ class DND(MDApp):
                 "on_release": lambda x=f"{item}": self.race_select(x)
             } for item in race
         ]
+        subrace_items = [
+            {
+                "viewclass": "OneLineListItem",
+                "text": f"{item}",
+                "on_release": lambda x=f"{item}": self.subrace_select(x)
+            } for item in all_subraces
+        ]
         self.menu = MDDropdownMenu(
             caller=self.screen.ids.class_id, # type: ignore
             items=menu_items,
@@ -56,19 +64,28 @@ class DND(MDApp):
             width_mult=3,
             max_height= '300dp'
         )
+        self.subrace = MDDropdownMenu(
+            caller=self.screen.ids.subrace_id, # type: ignore
+            items=subrace_items,
+            width_mult=3,
+            max_height= '300dp'
+        )
         return self.screen
 
     
     # Updates class button and level button text when menu item is selected
     def class_select(self, text_item):
         self.root.ids.class_id.text = text_item # type: ignore
-	self.menu.dismiss()	    
+        self.menu.dismiss()
     def level_select(self, text_item):
         self.root.ids.level_id.text = "LEVEL" + " " + text_item # type: ignore
-	self.level.dismiss()
+        self.level.dismiss()
     def race_select(self, text_item):
         self.root.ids.race_id.text = text_item # type: ignore
         self.race.dismiss()
+    def subrace_select(self, text_item):
+        self.root.ids.subrace_id.text = text_item
+        self.subrace.dismiss()
     
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):

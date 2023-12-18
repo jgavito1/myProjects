@@ -89,9 +89,32 @@ class DND(MDApp):
             elif text_item == 'MOUNTAIN DWARF':
                 self.root.ids.subrace_id.text = 'MOUNTAIN DWARF' # type: ignore
             else:
-                self.root.ids.subrace_id.text = 'NOT VALID SUBCLASS' # type: ignore
+                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
+        elif self.root.ids.race_id.text == 'ELF': # type: ignore
+            if text_item == 'HIGH ELF':
+                self.root.ids.subrace_id.text = 'HIGH ELF' # type: ignore
+            elif text_item == 'WOOD ELF':
+                self.root.ids.subrace_id.text = 'WOOD ELF' # type: ignore
+            elif text_item == 'DARK ELF':
+                self.root.ids.subrace_id.text = 'DARK ELF' # type: ignore
+            else:
+                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
+        elif self.root.ids.race_id.text == 'HALFLING': # type: ignore
+            if text_item == 'LIGHTFOOT HALFLING':
+                self.root.ids.subrace_id.text = 'LIGHTFOOT HALFLING' # type: ignore
+            elif text_item == 'STOUT HALFLING':
+                self.root.ids.subrace_id.text = 'STOUT HALFLING' # type: ignore
+            else:
+                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
+        elif self.root.ids.race_id.text == 'GNOME': # type: ignore
+            if text_item == 'FOREST GNOME':
+                self.root.ids.subrace_id.text = 'FOREST GNOME' # type: ignore
+            elif text_item == 'ROCK GNOME':
+                self.root.ids.subrace_id.text = 'ROCK GNOME' # type: ignore
+            else:
+                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
         else:
-            self.root.ids.subrace_id.text = text_item # type: ignore
+            self.root.ids.subrace_id.text = f'NO {self.root.ids.race_id.text} SUBRACES' # type: ignore
         self.subrace.dismiss()
     
      # Logic for the dice rolls for each dice if more than one

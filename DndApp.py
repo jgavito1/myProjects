@@ -72,7 +72,7 @@ class DND(MDApp):
         return self.screen
 
     
-    # Updates class button and level button text when menu item is selected
+    # Updates class, level, race, and subrace buttons on press
     def class_select(self, text_item):
         self.root.ids.class_id.text = text_item # type: ignore
         self.menu.dismiss()

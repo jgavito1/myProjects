@@ -4,7 +4,7 @@ from kivymd.app import MDApp
 from kivymd.uix.scrollview import MDScrollView
 import random
 from kivymd.uix.menu import MDDropdownMenu
-from menu_items import class_item, race, dwarf_subclass, elf_subclass, halfling_subclass, gnome_subclass, all_subraces
+from menu_items import class_item, race, all_subraces
 
 
 # Adds content inside of the Navigation Drawer for the user to click on

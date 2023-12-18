@@ -84,7 +84,6 @@ class DND(MDApp):
         self.race.dismiss()
     def subrace_select(self, text_item):
         if self.root.ids.race_id.text == 'DWARF': # type: ignore
-            self.root.ids.subrace_id.text = 'HILL DWARF' # type: ignore
             if text_item == 'HILL DWARF':
                 self.root.ids.subrace_id.text = 'HILL DWARF' # type: ignore
             elif text_item == 'MOUNTAIN DWARF':

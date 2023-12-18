@@ -252,45 +252,123 @@ MDNavigationLayout:
                         background_color: [.4,.4,.4,.4]
                         foreground_color: [1,1,1,1]
                         halign: 'center'
-                        hint_text: 'Character Name'
+                        hint_text: 'CHARACTER NAME'
                         multiline: False
                         size_hint: None, None
                         size: 300, 40
                         pos_hint: {'center_x': .5, 'center_y': .842}
                         line_anim: False
 
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'AGE'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .22, 'center_y': .55}
+                        line_anim: False
+                    
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'WEIGHT(lb)'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .5, 'center_y': .55}
+                        line_anim: False
+                    
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'HEIGHT'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .78, 'center_y': .55}
+                        line_anim: False
+                    
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'EYES'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .22, 'center_y': .45}
+                        line_anim: False
+                    
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'SKIN'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .5, 'center_y': .45}
+                        line_anim: False
+                    
+                    MDTextFieldRect:
+                        id: profile
+                        font_size: 20
+                        background_color: [.4,.4,.4,.4]
+                        foreground_color: [1,1,1,1]
+                        halign: 'center'
+                        hint_text: 'HAIR'
+                        multiline: False
+                        size_hint: None, None
+                        size: 200, 40
+                        pos_hint: {'center_x': .78, 'center_y': .45}
+                        line_anim: False
 
                     MDRectangleFlatButton:
                         id: class_id
                         text: 'CLASS'
-                        pos_hint: {'center_x': .28, 'center_y': .75}
+                        pos_hint: {'center_x': .275, 'center_y': .74}
                         on_release: app.menu.open()
                         font_size: 20
-                        size_hint_x: .4
+                        size_hint_x: .35
 
                     MDRectangleFlatButton:
                         id: level_id
                         text: 'LEVEL'
-                        pos_hint: {'center_x': .725, 'center_y': .75}
+                        pos_hint: {'center_x': .728, 'center_y': .74}
                         on_release: app.level.open()
                         font_size: 20 
-                        size_hint_x: .4
+                        size_hint_x: .35
                     
                     MDRectangleFlatButton:
                         id: race_id
                         text: 'RACE'
-                        pos_hint: {'center_x': .28, 'center_y': .65}
+                        pos_hint: {'center_x': .275, 'center_y': .65}
                         on_release: app.race.open()
                         font_size: 20 
-                        size_hint_x: .4
+                        size_hint_x: .35
                     
                     MDRectangleFlatButton:
                         id: subrace_id
                         text: 'SUBRACE'
-                        pos_hint: {'center_x': .725, 'center_y': .65}
+                        pos_hint: {'center_x': .728, 'center_y': .65}
                         on_release: app.subrace.open()
                         font_size: 20 
-                        size_hint_x: .4
+                        size_hint_x: .35
+                    
 
 
                 MDBottomNavigationItem:

@@ -4,7 +4,7 @@ from kivymd.app import MDApp
 from kivymd.uix.scrollview import MDScrollView
 import random
 from kivymd.uix.menu import MDDropdownMenu
-from menu_items import class_item, race, all_subraces
+from menu_items import class_item, race, all_subraces, alignments
 
 
 # Adds content inside of the Navigation Drawer for the user to click on
@@ -12,10 +12,9 @@ class ContentNavigationDrawer(MDScrollView):
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
 # Class defining the main functionality of the app
-class DND(MDApp):    
-    def build(self):
-        self.theme_cls.theme_style = 'Dark'
-        self.theme_cls.primary_palette = 'Orange'
+class DND(MDApp):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.screen = Builder.load_file('DndApp.kv')
         menu_items = [
             {
@@ -69,9 +68,19 @@ class DND(MDApp):
             width_mult=3,
             max_height= '300dp'
         )
-        return self.screen
-
-    
+        alignment_items = [
+            {
+                "viewclass": "OneLineListItem",
+                "text": f"{item}",
+                "on_release": lambda x=f"{item}": self.alignment_select(x)
+            } for item in alignments
+        ]
+        self.alignment = MDDropdownMenu(
+            caller=self.screen.ids.subrace_id, # type: ignore
+            items=alignment_items,
+            width_mult=3,
+            max_height= '300dp'
+        )
     # Updates class, level, race, and subrace buttons on press
     def class_select(self, text_item):
         self.root.ids.class_id.text = text_item # type: ignore
@@ -82,6 +91,9 @@ class DND(MDApp):
     def race_select(self, text_item):
         self.root.ids.race_id.text = text_item # type: ignore
         self.race.dismiss()
+    def alignment_select(self, text_item):
+        self.root.ids.alignment_id.text = text_item  # type: ignore
+        self.alignment.dismiss()
     def subrace_select(self, text_item):
         if self.root.ids.race_id.text == 'DWARF': # type: ignore
             if text_item == 'HILL DWARF':
@@ -148,4 +160,8 @@ class DND(MDApp):
         self.root.ids.modifier.text = "" # type: ignore
         self.root.ids.result_output.text = "" # type: ignore
 
+    def build(self):
+        self.theme_cls.theme_style = 'Dark'
+        return self.screen
+    
 DND().run()

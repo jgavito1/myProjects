@@ -13,7 +13,6 @@ all_subraces = [
             'FOREST GNOME', 'ROCK GNOME',    
         ]
 
-dwarf_subclass = ['HILL DWARF'',', 'MOUNTAIN DWARF']
-elf_subclass = ['HIGH ELF'',', 'WOOD ELF'',', 'DARK ELF']
-halfling_subclass = ['LIGHTFOOT HALFLING'',','STOUT HALFLING']
-gnome_subclass = ['FOREST GNOME'',', 'ROCK GNOME']
+alignments = ['LAWFUL GOOD', 'NEUTRAL GOOD', 'CHAOTIC GOOD',
+              'LAWFUL NEUTRAL', 'TRUE NEUTRAL', 'CHAOTIC NEUTRAL',
+              'LAWFUL EVIL', 'NEUTRAL EVIL', 'CHAOTIC EVIL']

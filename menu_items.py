@@ -16,3 +16,16 @@ all_subraces = [
 alignments = ['LAWFUL GOOD', 'NEUTRAL GOOD', 'CHAOTIC GOOD',
               'LAWFUL NEUTRAL', 'TRUE NEUTRAL', 'CHAOTIC NEUTRAL',
               'LAWFUL EVIL', 'NEUTRAL EVIL', 'CHAOTIC EVIL']
+
+backgrounds = [
+    "ACOLYTE",
+    "SAGE",
+    "FOLK HERO",
+    "CRIMINAL",
+    "NOBLE",
+    "OUTLANDER",
+    "ENTERTAINER",
+    "GUILD ARTISAN",
+    "HERMIT",
+    "URCHIN"
+]

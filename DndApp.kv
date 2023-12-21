@@ -260,7 +260,7 @@ MDNavigationLayout:
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
 
-                    MDTextFieldRect:
+		    MDTextFieldRect:
                         id: profile
                         font_size: 20
                         background_color: [.4,.4,.4,.4]
@@ -270,9 +270,10 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .22, 'center_y': .42}
+                        pos_hint: {'center_x': .22, 'center_y': .47}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
+                        input_filter: 'int'
                     
                     MDTextFieldRect:
                         id: profile
@@ -284,9 +285,10 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .5, 'center_y': .42}
+                        pos_hint: {'center_x': .5, 'center_y': .47}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
+                        input_filter: 'int'
                     
                     MDTextFieldRect:
                         id: profile
@@ -298,9 +300,10 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .78, 'center_y': .42}
+                        pos_hint: {'center_x': .78, 'center_y': .47}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
+                        input_filter: 'int'
                     
                     MDTextFieldRect:
                         id: profile
@@ -312,7 +315,7 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .22, 'center_y': .32}
+                        pos_hint: {'center_x': .22, 'center_y': .37}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
                     
@@ -326,7 +329,7 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .5, 'center_y': .32}
+                        pos_hint: {'center_x': .5, 'center_y': .37}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
                     
@@ -340,7 +343,7 @@ MDNavigationLayout:
                         multiline: False
                         size_hint: None, None
                         size: 200, 40
-                        pos_hint: {'center_x': .78, 'center_y': .32}
+                        pos_hint: {'center_x': .78, 'center_y': .37}
                         line_anim: False
                         background_color: app.theme_cls.bg_dark
 
@@ -377,7 +380,7 @@ MDNavigationLayout:
                     MDRectangleFlatButton:
                         id: alignment_id
                         text: 'ALIGNMENT'
-                        pos_hint: {'center_x': .5, 'center_y': .54}
+                        pos_hint: {'center_x': .272, 'center_y': .56}
                         on_release: app.alignment.open()
                         font_size: 20 
                         size_hint_x: .35
@@ -394,13 +397,22 @@ MDNavigationLayout:
                         line_color: '#2196f3'
                         text_color: 'white'
                     
+                    MDRectangleFlatButton:
+                        id: background_id
+                        text: 'BACKGROUND'
+                        pos_hint: {'center_x': .728, 'center_y': .56}
+                        on_release: app.background.open()
+                        font_size: 20 
+                        size_hint_x: .35
+                        line_color: '#2196f3'
+                        text_color: 'white'
+                    
                     MDTextField:
                         hint_text: 'Features and Traits'
                         mode: 'rectangle'
-                        pos_hint: {'center_x': .5, 'center_y': .15}
-                        size_hint: [.8, .25]
-                        multiline: True
-                    
+                        pos_hint: {'center_x': .5, 'center_y': .175}
+                        size_hint: [.8, .305]
+                        multiline: True                    
 
 
                 MDBottomNavigationItem:

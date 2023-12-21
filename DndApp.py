@@ -41,6 +41,11 @@ class DND(MDApp):
             for item in alignments
         ]
         self.alignment = self.dropdown(self.screen.ids.alignment_id, alignment_items) # type: ignore
+	background_items = [
+            {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.background_select(x)}
+            for item in backgrounds
+        ]
+        self.background = self.dropdown(self.screen.ids.background_id, background_items) # type: ignore
 
     def dropdown(self, caller, items):
         return MDDropdownMenu(caller=caller, items=items, width_mult=3, max_height='300dp')
@@ -58,6 +63,9 @@ class DND(MDApp):
     def alignment_select(self, text_item):
         self.root.ids.alignment_id.text = text_item  # type: ignore
         self.alignment.dismiss()
+    def background_select(self, text_item):
+        self.root.ids.background_id.text = text_item  # type: ignore
+        self.background.dismiss()
     def subrace_select(self, text_item):
 	valid_subraces = {
 	    'DWARF': ['HILL DWARF', 'MOUNTAIN DWARF'],
@@ -65,7 +73,6 @@ class DND(MDApp):
 	    'HALFLING': ['LIGHTFOOT HALFLING', 'STOUT HALFLING'],
 	    'GNOME': ['FOREST GNOME', 'ROCK GNOME']
 	}
-	
 	race = self.root.ids.race_id.text # type: ignore
 	subrace = text_item if text_item in valid_subraces.get(race, []) else 'N/A'
 	self.root.ids.subrace_id.text = subrace # type: ignore

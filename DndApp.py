@@ -16,71 +16,39 @@ class DND(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.screen = Builder.load_file('DndApp.kv')
-        menu_items = [
-            {
-                "viewclass": "OneLineListItem",
-                "text": f"{item}",
-                "on_release": lambda x=f"{item}": self.class_select(x)
-            } for item in class_item 
+	menu_items = [
+            {"viewclass": "OneLineListItem", "text": f"{item}", "on_release": lambda x=f"{item}": self.class_select(x)}
+            for item in class_item
         ]
-        self.menu = MDDropdownMenu(
-            caller=self.screen.ids.class_id, # type: ignore
-            items=menu_items,
-            width_mult=3,
-            max_height= '300dp'
-        )
+        self.menu = self.dropdown(self.screen.ids.class_id, menu_items) # type: ignore
         level_items = [
-            {
-                "viewclass": "OneLineListItem",
-                "text": f"{i}",
-                "on_release": lambda x=f"{i}": self.level_select(x)
-            } for i in range(1, 20+1)
+            {"viewclass": "OneLineListItem","text": f"{i}","on_release": lambda x=f"{i}": self.level_select(x)} 
+            for i in range(1, 20+1)
         ]
-        self.level = MDDropdownMenu(
-            caller=self.screen.ids.level_id, # type: ignore
-            items=level_items,
-            width_mult=3,
-            max_height= '300dp'
-        )
+        self.level = self.dropdown(self.screen.ids.level_id, level_items) # type: ignore
+
         race_items = [
-            {
-                "viewclass": "OneLineListItem",
-                "text": f"{item}",
-                "on_release": lambda x=f"{item}": self.race_select(x)
-            } for item in race
+            {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.race_select(x)}
+            for item in race
         ]
-        self.race = MDDropdownMenu(
-            caller=self.screen.ids.race_id, # type: ignore
-            items=race_items,
-            width_mult=3,
-            max_height= '300dp'
-        )
+        self.race = self.dropdown(self.screen.ids.race_id, race_items) # type: ignore
+
         subrace_items = [
-            {
-                "viewclass": "OneLineListItem",
-                "text": f"{item}",
-                "on_release": lambda x=f"{item}": self.subrace_select(x)
-            } for item in all_subraces
+            {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.subrace_select(x)}
+            for item in all_subraces
         ]
-        self.subrace = MDDropdownMenu(
-            caller=self.screen.ids.subrace_id, # type: ignore
-            items=subrace_items,
-            width_mult=3,
-            max_height= '300dp'
-        )
+        self.subrace = self.dropdown(self.screen.ids.subrace_id, subrace_items) # type: ignore
+
         alignment_items = [
-            {
-                "viewclass": "OneLineListItem",
-                "text": f"{item}",
-                "on_release": lambda x=f"{item}": self.alignment_select(x)
-            } for item in alignments
+            {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.alignment_select(x)}
+            for item in alignments
         ]
-        self.alignment = MDDropdownMenu(
-            caller=self.screen.ids.subrace_id, # type: ignore
-            items=alignment_items,
-            width_mult=3,
-            max_height= '300dp'
-        )
+        self.alignment = self.dropdown(self.screen.ids.alignment_id, alignment_items) # type: ignore
+
+
+    def dropdown(self, caller, items):
+        return MDDropdownMenu(caller=caller, items=items, width_mult=3, max_height='300dp')
+
     # Updates class, level, race, and subrace buttons on press
     def class_select(self, text_item):
         self.root.ids.class_id.text = text_item # type: ignore
@@ -95,39 +63,17 @@ class DND(MDApp):
         self.root.ids.alignment_id.text = text_item  # type: ignore
         self.alignment.dismiss()
     def subrace_select(self, text_item):
-        if self.root.ids.race_id.text == 'DWARF': # type: ignore
-            if text_item == 'HILL DWARF':
-                self.root.ids.subrace_id.text = 'HILL DWARF' # type: ignore
-            elif text_item == 'MOUNTAIN DWARF':
-                self.root.ids.subrace_id.text = 'MOUNTAIN DWARF' # type: ignore
-            else:
-                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
-        elif self.root.ids.race_id.text == 'ELF': # type: ignore
-            if text_item == 'HIGH ELF':
-                self.root.ids.subrace_id.text = 'HIGH ELF' # type: ignore
-            elif text_item == 'WOOD ELF':
-                self.root.ids.subrace_id.text = 'WOOD ELF' # type: ignore
-            elif text_item == 'DARK ELF':
-                self.root.ids.subrace_id.text = 'DARK ELF' # type: ignore
-            else:
-                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
-        elif self.root.ids.race_id.text == 'HALFLING': # type: ignore
-            if text_item == 'LIGHTFOOT HALFLING':
-                self.root.ids.subrace_id.text = 'LIGHTFOOT HALFLING' # type: ignore
-            elif text_item == 'STOUT HALFLING':
-                self.root.ids.subrace_id.text = 'STOUT HALFLING' # type: ignore
-            else:
-                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
-        elif self.root.ids.race_id.text == 'GNOME': # type: ignore
-            if text_item == 'FOREST GNOME':
-                self.root.ids.subrace_id.text = 'FOREST GNOME' # type: ignore
-            elif text_item == 'ROCK GNOME':
-                self.root.ids.subrace_id.text = 'ROCK GNOME' # type: ignore
-            else:
-                self.root.ids.subrace_id.text = 'NOT A VALID SUBRACE' # type: ignore
-        else:
-            self.root.ids.subrace_id.text = f'NO {self.root.ids.race_id.text} SUBRACES' # type: ignore
-        self.subrace.dismiss()
+	valid_subraces = {
+	    'DWARF': ['HILL DWARF', 'MOUNTAIN DWARF'],
+	    'ELF': ['HIGH ELF', 'WOOD ELF', 'DARK ELF'],
+	    'HALFLING': ['LIGHTFOOT HALFLING', 'STOUT HALFLING'],
+	    'GNOME': ['FOREST GNOME', 'ROCK GNOME']
+	}
+	
+	race = self.root.ids.race_id.text # type: ignore
+	subrace = text_item if text_item in valid_subraces.get(race, []) else 'N/A'
+	self.root.ids.subrace_id.text = subrace # type: ignore
+	self.subrace.dismiss()
     
      # Logic for the dice rolls for each dice if more than one
     def roll_dice(self):

@@ -26,25 +26,21 @@ class DND(MDApp):
             for i in range(1, 20+1)
         ]
         self.level = self.dropdown(self.screen.ids.level_id, level_items) # type: ignore
-
         race_items = [
             {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.race_select(x)}
             for item in race
         ]
         self.race = self.dropdown(self.screen.ids.race_id, race_items) # type: ignore
-
         subrace_items = [
             {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.subrace_select(x)}
             for item in all_subraces
         ]
         self.subrace = self.dropdown(self.screen.ids.subrace_id, subrace_items) # type: ignore
-
         alignment_items = [
             {"viewclass": "OneLineListItem","text": f"{item}","on_release": lambda x=f"{item}": self.alignment_select(x)}
             for item in alignments
         ]
         self.alignment = self.dropdown(self.screen.ids.alignment_id, alignment_items) # type: ignore
-
 
     def dropdown(self, caller, items):
         return MDDropdownMenu(caller=caller, items=items, width_mult=3, max_height='300dp')

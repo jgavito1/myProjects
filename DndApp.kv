@@ -428,7 +428,7 @@ MDNavigationLayout:
                         text: 'STR '
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .8}
+                        pos_hint: {'center_x': .1, 'center_y': .83}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
                     
@@ -436,7 +436,7 @@ MDNavigationLayout:
                         text: 'DEX '
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .7}
+                        pos_hint: {'center_x': .1, 'center_y': .73}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
 
@@ -444,7 +444,7 @@ MDNavigationLayout:
                         text: 'CON'
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .6}
+                        pos_hint: {'center_x': .1, 'center_y': .63}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
                     
@@ -452,7 +452,7 @@ MDNavigationLayout:
                         text: 'INT '
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .5}
+                        pos_hint: {'center_x': .1, 'center_y': .53}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
                     
@@ -460,7 +460,7 @@ MDNavigationLayout:
                         text: 'WIS '
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .4}
+                        pos_hint: {'center_x': .1, 'center_y': .43}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
                     
@@ -468,15 +468,311 @@ MDNavigationLayout:
                         text: 'CHA'
                         halign: 'center'
                         font_size: 22
-                        pos_hint: {'center_x': .1, 'center_y': .3}
+                        pos_hint: {'center_x': .1, 'center_y': .33}
                         theme_text_color: 'Custom'
                         text_color: 'orange'
+
+                    MDLabel:
+                        text: 'SKILLS'
+                        halign: 'center'
+                        font_size: 22
+                        pos_hint: {'center_x': .65, 'center_y': .83}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDLabel:
+                        text: 'Acrobatics (DEX)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .78}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .784}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Animal Handling (WIS)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .69}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange' 
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .694}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Arcana (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .6}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                        
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .604}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Athletics (STR)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .51}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                        
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .514}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Deception (CHA)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .42}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                        
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .424}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'History (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .33}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .334}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Insight (WIS)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .24}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .244}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Intimidation (CHA)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .15}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .154}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Investigation (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .5, 'center_y': .06}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .65, 'center_y': .064}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Medicine (WIS)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .78}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .784}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Nature (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .69}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .694}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Perception (WIS)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .6}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .604}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Performance (CHA)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .51}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .514}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Persuasion (CHA)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .42}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .424}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Religion (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .33}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .334}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Sleight of Hand (DEX)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .24}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .244}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Stealth (DEX)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .15}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .154}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
+                    
+                    MDLabel:
+                        text: 'Survival (INT)'
+                        halign: 'center'
+                        font_size: 20
+                        pos_hint: {'center_x': .8, 'center_y': .06}
+                        theme_text_color: 'Custom'
+                        text_color: 'orange'
+                    
+                    MDTextField:
+                        halign: 'center'
+                        pos_hint: {'center_x': .95, 'center_y': .064}
+                        size_hint_x: .03
+                        line_anim: False
+                        font_size: 18
+                        input_filter: 'int'
 
                     MDTextField:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .8}
+                        pos_hint: {'center_x': .2, 'center_y': .83}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
@@ -485,7 +781,7 @@ MDNavigationLayout:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .7}
+                        pos_hint: {'center_x': .2, 'center_y': .73}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
@@ -494,7 +790,7 @@ MDNavigationLayout:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .6}
+                        pos_hint: {'center_x': .2, 'center_y': .63}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
@@ -503,7 +799,7 @@ MDNavigationLayout:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .5}
+                        pos_hint: {'center_x': .2, 'center_y': .53}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
@@ -512,7 +808,7 @@ MDNavigationLayout:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .4}
+                        pos_hint: {'center_x': .2, 'center_y': .43}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
@@ -521,10 +817,11 @@ MDNavigationLayout:
                         mode: 'round'
                         size_hint_x: .08
                         width: 600
-                        pos_hint: {'center_x': .2, 'center_y': .3}
+                        pos_hint: {'center_x': .2, 'center_y': .33}
                         font_size: 25
                         halign: 'center'
                         fill_color_normal: app.theme_cls.bg_normal
+                    
                         
 
                 MDBottomNavigationItem:
